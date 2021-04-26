@@ -1,0 +1,135 @@
+{
+  "id": "2496529",
+  "name": "vue",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "21061523",
+      "name": "拍照",
+      "font_class": "paizhao",
+      "unicode": "f456",
+      "unicode_decimal": 62550
+    },
+    {
+      "icon_id": "21061524",
+      "name": "录像",
+      "font_class": "luxiang",
+      "unicode": "f457",
+      "unicode_decimal": 62551
+    },
+    {
+      "icon_id": "21061525",
+      "name": "关闭",
+      "font_class": "guanbi",
+      "unicode": "f458",
+      "unicode_decimal": 62552
+    },
+    {
+      "icon_id": "21061526",
+      "name": "上传",
+      "font_class": "shangchuan",
+      "unicode": "f459",
+      "unicode_decimal": 62553
+    },
+    {
+      "icon_id": "21061527",
+      "name": "通知",
+      "font_class": "tongzhi",
+      "unicode": "f45a",
+      "unicode_decimal": 62554
+    },
+    {
+      "icon_id": "21061528",
+      "name": "位置",
+      "font_class": "weizhi",
+      "unicode": "f45b",
+      "unicode_decimal": 62555
+    },
+    {
+      "icon_id": "21061529",
+      "name": "下载",
+      "font_class": "xiazai",
+      "unicode": "f45c",
+      "unicode_decimal": 62556
+    },
+    {
+      "icon_id": "21061530",
+      "name": "语音",
+      "font_class": "yuyin",
+      "unicode": "f45d",
+      "unicode_decimal": 62557
+    },
+    {
+      "icon_id": "21061532",
+      "name": "安全",
+      "font_class": "anquan",
+      "unicode": "f45e",
+      "unicode_decimal": 62558
+    },
+    {
+      "icon_id": "21061533",
+      "name": "发现",
+      "font_class": "faxian",
+      "unicode": "f45f",
+      "unicode_decimal": 62559
+    },
+    {
+      "icon_id": "21061534",
+      "name": "静音",
+      "font_class": "jingyin",
+      "unicode": "f460",
+      "unicode_decimal": 62560
+    },
+    {
+      "icon_id": "21061535",
+      "name": "首页",
+      "font_class": "shouye",
+      "unicode": "f461",
+      "unicode_decimal": 62561
+    },
+    {
+      "icon_id": "21061536",
+      "name": "资料",
+      "font_class": "ziliao",
+      "unicode": "f462",
+      "unicode_decimal": 62562
+    },
+    {
+      "icon_id": "21061537",
+      "name": "加密",
+      "font_class": "jiami",
+      "unicode": "f463",
+      "unicode_decimal": 62563
+    },
+    {
+      "icon_id": "21061538",
+      "name": "加音量",
+      "font_class": "jiayinliang",
+      "unicode": "f464",
+      "unicode_decimal": 62564
+    },
+    {
+      "icon_id": "21061539",
+      "name": "减音量",
+      "font_class": "jianyinliang",
+      "unicode": "f465",
+      "unicode_decimal": 62565
+    },
+    {
+      "icon_id": "21061540",
+      "name": "解锁",
+      "font_class": "jiesuo",
+      "unicode": "f466",
+      "unicode_decimal": 62566
+    },
+    {
+      "icon_id": "21061541",
+      "name": "客服",
+      "font_class": "kefu",
+      "unicode": "f467",
+      "unicode_decimal": 62567
+    }
+  ]
+}
