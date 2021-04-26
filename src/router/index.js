@@ -31,6 +31,11 @@ const routes = [
     component: () => import('@/views/Center')
   },
   {
+    path: '/City',
+    name: 'city',
+    component: () => import('@/views/City')
+  },
+  {
     path: '/:catchAll(.*)',
     redirect: '/movie'
   }

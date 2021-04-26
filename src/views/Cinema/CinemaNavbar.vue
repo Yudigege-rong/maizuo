@@ -1,9 +1,9 @@
 <template>
     <div class="navbar fixed">
         <ul>
-            <li class="nav_left">
+            <router-link class="nav_left" tag="li" to="/city">
                 <span>北京</span>
-            </li>
+            </router-link>
             <li class="nav_center">影院</li>
             <li class="nav_right">搜索</li>
         </ul>
