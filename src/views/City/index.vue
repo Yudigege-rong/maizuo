@@ -1,19 +1,80 @@
 <template>
     <div class="page-city">
         <div class="header">
-            <div class="header_left"><i>X</i></div>
+            <router-link to="/cinema" tag="div" class="header_left"><i>X</i></router-link>
             <div class="header_title">当前城市 - 北京</div>
         </div>
         <div class="hot-city">
             <div class="city-index-title">热门城市</div>
             <ul class="city-index-detail">
-                <li class="city-item-detail">
-                    <div class="city-item-text">上海</div>
+                <li class="city-item-detail" v-for="item in hotList" :key="item.cityId">
+                    <div class="city-item-text">{{item.name}}</div>
                 </li>
             </ul>
         </div>
+        <mt-index-list>
+            <mt-index-section :index="city.index" v-for="city in cityList" :key="city.index">
+                <div v-for="data in city.list" :key="data.cityId">
+                    <mt-cell :title="data.name"></mt-cell>
+                </div>
+            </mt-index-section>
+        </mt-index-list>
     </div>
 </template>
+
+<script>
+import { getCity } from '@/API/city'
+export default {
+  name: 'city',
+  data () {
+    return {
+      cityList: [],
+      hotList: []
+    }
+  },
+  mounted () {
+    getCity().then((res) => {
+      console.log(res.data.data.cities)
+      var cities = res.data.data.cities
+      var { newCityList, hotListArr } = this.getCityList(cities)
+      this.cityList = newCityList
+      this.hotList = hotListArr
+    })
+  },
+  methods: {
+    getCityList (cities) {
+      var cityListArr = []
+      var hotListArr = []
+      for (var i = 65; i < 91; i++) {
+        cityListArr.push(String.fromCharCode(i))
+      }
+      //  console.log(cityListArr)
+      var newCityList = []
+      for (var j = 0; j < cityListArr.length; j++) {
+        const arr = cities.filter((item) => item.pinyin.substring(0, 1).toUpperCase() === cityListArr[j])
+        // console.log(arr)
+        if (arr.length > 0) {
+          newCityList.push({
+            index: cityListArr[j],
+            list: arr
+          })
+        }
+      }
+      console.log(newCityList)
+      for (var k = 0; k < cities.length; k++) {
+        if (cities[k].isHot === 1) {
+          hotListArr.push(cities[k])
+        }
+      }
+      // console.log(hotListArr)
+      return {
+        newCityList,
+        hotListArr
+      }
+    }
+  }
+}
+</script>
 
 <style lang="scss" scoped>
 .page-city{
