@@ -2,19 +2,19 @@
     <div class="page-city">
         <div class="header">
             <router-link to="/cinema" tag="div" class="header_left"><i>X</i></router-link>
-            <div class="header_title">当前城市 - 北京</div>
+            <div class="header_title">当前城市 - {{$store.state.city.name}}</div>
         </div>
         <div class="hot-city">
             <div class="city-index-title">热门城市</div>
             <ul class="city-index-detail">
-                <li class="city-item-detail" v-for="item in hotList" :key="item.cityId">
+                <li class="city-item-detail" v-for="item in hotList" :key="item.cityId" @click="handleToCity(item.name, item.cityId)">
                     <div class="city-item-text">{{item.name}}</div>
                 </li>
             </ul>
         </div>
         <mt-index-list>
-            <mt-index-section :index="city.index" v-for="city in cityList" :key="city.index">
-                <div v-for="data in city.list" :key="data.cityId">
+            <mt-index-section :index="city.index" v-for="city in cityList" :key="city.index" >
+                <div v-for="data in city.list" :key="data.cityId" @click="handleToCity(data.name, data.cityId)">
                     <mt-cell :title="data.name"></mt-cell>
                 </div>
             </mt-index-section>
@@ -71,6 +71,15 @@ export default {
         newCityList,
         hotListArr
       }
+    },
+    handleToCity (name, id) {
+      this.$store.commit('city/CITY_INFO', {
+        name,
+        id
+      })
+      localStorage.setItem('selectName', name)
+      localStorage.setItem('selectId', id)
+      this.$router.push('/movie')
     }
   }
 }

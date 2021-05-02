@@ -13,6 +13,7 @@ div{
     height: 50px;
     ul{
         display: flex;
+        border-bottom: 1px solid #eee;
         li{
             flex: 1;
             height: 50px;

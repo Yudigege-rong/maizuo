@@ -2,7 +2,7 @@
     <div class="navbar fixed">
         <ul>
             <router-link class="nav_left" tag="li" to="/city">
-                <span>北京</span>
+                <span>{{$store.state.city.name}}</span>
             </router-link>
             <li class="nav_center">影院</li>
             <li class="nav_right">搜索</li>

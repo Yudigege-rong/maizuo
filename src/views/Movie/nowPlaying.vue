@@ -1,5 +1,6 @@
 <template>
     <div class="content">
+        <Loading v-if="isLoading"></Loading>
         <ul>
             <li v-for="data in datalist" :key="data.filmId">
                 <img :src="data.poster" alt="">
@@ -31,12 +32,21 @@ export default {
   name: 'nowPlaying',
   data () {
     return {
-      datalist: []
+      datalist: [],
+      isLoading: true,
+      prevCityId: -1
     }
   },
-  mounted () {
-    getNowPlaying().then((res) => {
+  activated () {
+    var cityId = this.$store.state.city.id
+    if (this.prevCityId === cityId) {
+      return
+    }
+    this.isLoading = true
+    getNowPlaying(cityId).then((res) => {
       this.datalist = res.data.data.films
+      this.isLoading = false
+      this.prevCityId = cityId
     })
   }
 }
@@ -53,6 +63,7 @@ ul{
         padding: 10px;
         overflow: hidden;
         align-items: center;
+        border-bottom: 1px solid #eee;
         img{
             float: left;
             width: 66px;

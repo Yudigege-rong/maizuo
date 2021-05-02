@@ -24,13 +24,19 @@ export default {
   name: 'cinemalist',
   data () {
     return {
-      datalist: []
+      datalist: [],
+      prevCityId: -1
     }
   },
-  mounted () {
-    getCinema().then((res) => {
-      console.log(res.data)
+  activated () {
+    var cityId = this.$store.state.city.id
+    if (this.prevCityId === cityId) {
+      return
+    }
+    getCinema(cityId).then((res) => {
+      //  console.log(res.data)
       this.datalist = res.data.data.cinemas
+      this.prevCityId = cityId
     })
   }
 }
